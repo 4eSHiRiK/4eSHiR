@@ -27,3 +27,11 @@ git checkout <branch> #Переключчение на ветку
 git merge <branch> # склеиваем <branch > в master
 git remote -v #список удаленных репозиториев
 git remote add origin <link на репозиторий> #добавить локальный репозиторий в удаленный (shift+insert)
+git push origin master #пушим данные в гит
+git push -all origin #загрузка всех веток
+git pull  origin master #Закачка с удаленного репозитория себе
+git fetch --all #показывает обновления со всех удааленных веток
+git checkout origin/catalog #Переключение на ветку удаленного репозитория
+git clone link папка #склонировать в папку удаленный репозиторий
+
+
