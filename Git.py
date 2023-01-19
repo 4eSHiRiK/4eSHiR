@@ -25,3 +25,5 @@ git branch #Список веток
 git branch имя ветки #создание новой ветки
 git checkout <branch> #Переключчение на ветку
 git merge <branch> # склеиваем <branch > в master
+git remote -v #список удаленных репозиториев
+git remote add origin <link на репозиторий> #добавить локальный репозиторий в удаленный (shift+insert)
