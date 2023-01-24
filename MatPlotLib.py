@@ -2,11 +2,11 @@
 
 # import matplotlib.pyplot as plt
 #
-# import matplotlib.pyplot as plt
-# year = [1950, 1975, 2000, 2018]
-# population = [2.12, 3.681, 5.312, 6.981]
-# plt.plot(year, population)
-# plt.show()
+import matplotlib.pyplot as plt
+year = [1950, 1975, 2000, 2018]
+population = [2.12, 3.681, 5.312, 6.981]
+plt.plot(year, population)
+plt.show()
 
 
 
@@ -69,16 +69,16 @@
 # plt.pie(speed, explode=explode, labels=names, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
 # plt.axis('equal')
 # plt.show()
-
-import numpy as np
-import numpy.random
-import matplotlib.pyplot as plt
-temperature = np.random.randn(4096)
-anger = np.random.randn(4096)
-heatmap, xedges, yedges = np.histogram2d(temperature, anger, bins=(64,64))
-extent = [xedges[0], xedges[-1], yedges[0], yedges[-1]]
-plt.clf()
-plt.ylabel('Anger')
-plt.xlabel('Temp')
-plt.imshow(heatmap, extent=extent)
-plt.show()
+#
+# import numpy as np
+# import numpy.random
+# import matplotlib.pyplot as plt
+# temperature = np.random.randn(4096)
+# anger = np.random.randn(4096)
+# heatmap, xedges, yedges = np.histogram2d(temperature, anger, bins=(64,64))
+# extent = [xedges[0], xedges[-1], yedges[0], yedges[-1]]
+# plt.clf()
+# plt.ylabel('Anger')
+# plt.xlabel('Temp')
+# plt.imshow(heatmap, extent=extent)
+# plt.show()
