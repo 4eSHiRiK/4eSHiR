@@ -14,26 +14,26 @@
 
 
 
-# class IterationExample:
-#
-#     def __iter__(self):
-#         self.x = 0
-#         return self
-#
-#     def __next__(self):
-#         y = self.x
-#         self.x +=1
-#         return y
-#
-# classinstance = IterationExample()
-# example = iter(classinstance)
-#
-# print(next(example))
-# print(next(example))
-# print(next(example))
-# print(example.__next__())
-# for i in example:
-#     print(i)
+class IterationExample:
+
+    def __iter__(self):
+        self.x = 0
+        return self
+
+    def __next__(self):
+        y = self.x
+        self.x +=1
+        return y
+
+classinstance = IterationExample()
+example = iter(classinstance)
+
+print(next(example))
+print(next(example))
+print(next(example))
+print(example.__next__())
+for i in example:
+    print(i)
 
 # l_c = [i for i in ['helloword']]
 # print(l_c)
