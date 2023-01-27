@@ -57,14 +57,17 @@
 #     nominal = [i for i in range(1, 14)]
 #     card = []
 #
+#
+#
+#     def __iter__(self):
+#         self.card = []
+#         return self.card
+#
 #     def lst(self):
 #         for elem_1 in self.mast:
 #             for elem_2 in self.nominal:
 #                 self.card.append(str(elem_2) + ' ' + str(elem_1))
-#     def iter(self):
-#         self.card = self.card
-#         return self.card
-#     def next(self):
+#     def __next__(self):
 #         x = 0
 #         choosen_card = self.card[x]
 #         x+=1
@@ -77,34 +80,34 @@
 # print(next(z))
 
 
-class CardDeck:
-
-    mast = ['bubna', 'pika', 'crest', 'chervi']
-    nominal = [i for i in range(1, 14)]
-    card = []
-    current = 0
-
-    def __iter__(self):
-        self.current = 0
-        return self
-
-    def __init__(self):
-
-        for elem_1 in self.mast:
-            for elem_2 in self.nominal:
-                self.card.append(str(elem_2) + ' ' + str(elem_1))
-        # print(self.card)
-
-    def __next__(self):
-        while self.current < len(self.card):
-            result = self.card[self.current]
-            self.current += 1
-            return result
-        else:
-            raise StopIteration
-
-
-carddeck = CardDeck()
-cd = iter(carddeck)
-while True:
-    print(next(cd))
+# class CardDeck:
+#
+#     mast = ['bubna', 'pika', 'crest', 'chervi']
+#     nominal = [i for i in range(1, 14)]
+#     card = []
+#     current = 0
+#
+#     def __iter__(self):
+#         self.current = 0
+#         return self
+#
+#     def __init__(self):
+#
+#         for elem_1 in self.mast:
+#             for elem_2 in self.nominal:
+#                 self.card.append(str(elem_2) + ' ' + str(elem_1))
+#         # print(self.card)
+#
+#     def __next__(self):
+#         while self.current < len(self.card):
+#             result = self.card[self.current]
+#             self.current += 1
+#             return result
+#         else:
+#             raise StopIteration
+#
+#
+# carddeck = CardDeck()
+# cd = iter(carddeck)
+# while True:
+#     print(next(cd))

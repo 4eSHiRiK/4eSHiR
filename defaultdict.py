@@ -8,15 +8,11 @@
 # print(sorted(d.items()))
 
 from collections import defaultdict as DD
-
-
-# Function for returning a default values for the
-# keys which are not present in the dictionary
 def default_value():
     return "This key is not present"
 
 
-# Now, we will define the dict
+
 dict_1 = DD(default_value)
 dict_1["ABC"] = 1
 dict_1["DEF"] = 2
