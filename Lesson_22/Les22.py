@@ -16,26 +16,26 @@
 # asyncio.run(main())
 
 
-import asyncio
-
-async def async_func(task_no):
-    print(f'{task_no}: Start...')
-    await asyncio.sleep(1)
-    print(f'{task_no}...Ready')
-
-
-async def main():
-    taskA = loop.create_task(async_func('taskA'))
-    taskB = loop.create_task(async_func('taskB'))
-    taskC = loop.create_task(async_func('taskC'))
-    await asyncio.wait([taskA,taskB,taskC])
-
-if __name__ == "__main__":
-    try:
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(main())
-    except:
-        pass
+# import asyncio
+#
+# async def async_func(task_no):
+#     print(f'{task_no}: Start...')
+#     await asyncio.sleep(1)
+#     print(f'{task_no}...Ready')
+#
+#
+# async def main():
+#     taskA = loop.create_task(async_func('taskA'))
+#     taskB = loop.create_task(async_func('taskB'))
+#     taskC = loop.create_task(async_func('taskC'))
+#     await asyncio.wait([taskA,taskB,taskC])
+#
+# if __name__ == "__main__":
+#     try:
+#         loop = asyncio.get_event_loop()
+#         loop.run_until_complete(main())
+#     except:
+#         pass
 
 #
 # import asyncio
@@ -117,3 +117,58 @@ if __name__ == "__main__":
 # print('App stop')
 
 
+# from threading import Thread, Lock
+# from time import sleep
+#
+# lock = Lock()
+# stop_thread = False
+#
+#
+# def infinit_worker():
+#     print('Start infinit worker')
+#     while True:
+#         print('---> thread work')
+#         lock.acquire()
+#         if stop_thread is True:
+#             break
+#         lock.release()
+#         sleep(0.1)
+#     print('Stop infinit worker')
+#
+# th = Thread(target=infinit_worker)
+# th.start()
+# sleep(0.1)
+# lock.acquire()
+# stop_thread = True
+# lock.release()
+
+# from multiprocessing import Process
+#
+# def disp():
+#     print('Hello,Welcome')
+#     if __name__ == '__main__':
+#         p = Process(target=disp)
+#     p.start()
+#     # p.join()
+#     p.kill()
+
+
+import multiprocessing
+
+def cube(n):
+    print('The cube is: {}'.format(n*n*n))
+
+def square(n):
+    print('The square is: {}'.format(n*n))
+
+if __name__ == '__main__':
+    process_1 = multiprocessing.Process(target=square, args=(5,))
+    process_2 = multiprocessing.Process(target=cube, args=(5,))
+
+    process_1.start()
+    process_2.start()
+
+    process_1.join()
+    process_2.join()
+
+    print('Both processes are finished')
