@@ -100,41 +100,44 @@ import random
 # Как сделать чтобы столбики начинались с 1 уровня?
 
 #TASK 6
+#
+# lst = ['Uchiha',13,5,'Shisui',94,'Sacra']
+#
+# connect = sqlite3.connect('task_HW.db')
+# cursor = connect.cursor()
+#
+#
+# cursor.execute(''' CREATE TABLE IF NOT EXISTS tab_num (id INTEGER PRIMARY KEY AUTOINCREMENT, col_1 INTEGER)''')
+# cursor.execute(''' CREATE TABLE IF NOT EXISTS tab_text (id INTEGER PRIMARY KEY AUTOINCREMENT, col_1 TEXT)''')
+# connect.commit()
+#
+# cursor.execute(''' SELECT * FROM tab_num''')
+# check = cursor.fetchall()
+# if len(check) > 5:
+#     cursor.execute(''' DELETE FROM tab_text WHERE id=1 ''')
+#     connect.commit()
+# elif len(check) < 5:
+#     cursor.execute(''' UPDATE tab_text SET col_1 = 'Hello' WHERE id=1''')
+#
+# for elem in lst:
+#     if type(elem) is str:
+#         cursor.execute(''' INSERT INTO tab_text (col_1) VALUES (?) ''', (elem,))
+#         cursor.execute(''' INSERT INTO tab_num (col_1) VALUES (?) ''', (len(elem),))
+#         connect.commit()
+#     elif type(elem) is int:
+#         if elem % 2 == 0:
+#             cursor.execute(''' INSERT INTO tab_num (col_1) VALUES (?) ''', (elem,))
+#             connect.commit()
+#         else:
+#             cursor.execute(''' INSERT INTO tab_text (col_1) VALUES ('Нечетное') ''')
+#             connect.commit()
+#
+# cursor.execute(''' SELECT * FROM tab_num''')
+# number = cursor.fetchall()
+# print(number)
+# cursor.execute(''' SELECT * FROM tab_text''')
+# words = cursor.fetchall()
+# print(words)
 
-lst = ['Uchiha',13,5,'Shisui',94,'Sacra']
-
-connect = sqlite3.connect('task_HW.db')
-cursor = connect.cursor()
 
 
-cursor.execute(''' CREATE TABLE IF NOT EXISTS tab_num (id INTEGER PRIMARY KEY AUTOINCREMENT, col_1 INTEGER)''')
-cursor.execute(''' CREATE TABLE IF NOT EXISTS tab_text (id INTEGER PRIMARY KEY AUTOINCREMENT, col_1 TEXT)''')
-connect.commit()
-
-cursor.execute(''' SELECT * FROM tab_num''')
-check = cursor.fetchall()
-if len(check) > 5:
-    cursor.execute(''' DELETE FROM tab_text WHERE id=1 ''')
-    connect.commit()
-elif len(check) < 5:
-    cursor.execute(''' UPDATE tab_text SET col_1 = 'Hello' WHERE id=1''')
-
-for elem in lst:
-    if type(elem) is str:
-        cursor.execute(''' INSERT INTO tab_text (col_1) VALUES (?) ''', (elem,))
-        cursor.execute(''' INSERT INTO tab_num (col_1) VALUES (?) ''', (len(elem),))
-        connect.commit()
-    elif type(elem) is int:
-        if elem % 2 == 0:
-            cursor.execute(''' INSERT INTO tab_num (col_1) VALUES (?) ''', (elem,))
-            connect.commit()
-        else:
-            cursor.execute(''' INSERT INTO tab_text (col_1) VALUES ('Нечетное') ''')
-            connect.commit()
-
-cursor.execute(''' SELECT * FROM tab_num''')
-number = cursor.fetchall()
-print(number)
-cursor.execute(''' SELECT * FROM tab_text''')
-words = cursor.fetchall()
-print(words)
